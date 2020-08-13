@@ -4,6 +4,7 @@ import android.app.Application
 import android.text.TextUtils
 import androidx.databinding.ObservableField
 import androidx.lifecycle.AndroidViewModel
+import com.test.movies.R
 import com.test.movies.utils.Util
 
 /*
@@ -32,18 +33,18 @@ class BiometricLoginViewModel(application: Application) : AndroidViewModel(appli
         val flag: Boolean
         if (TextUtils.isEmpty(username)) {
             flag = false
-            mListener?.onError("Please enter your username!")
+            mListener?.onError(getApplication<Application>().resources.getString(R.string.enter_username))
         } else if (!utilIntance.isValidUserName(username)) {
             flag = false
-            mListener?.onError("Please enter valid username!")
+            mListener?.onError(getApplication<Application>().resources.getString(R.string.invalid_username))
         } else if (TextUtils.isEmpty(password)) {
             flag = false
-            mListener?.onError("Please enter your Password!")
+            mListener?.onError(getApplication<Application>().resources.getString(R.string.enter_password))
         } else if (!utilIntance.isValidPassword(password)) {
             flag = false
-            mListener?.onError("Please enter valid password")
+            mListener?.onError(getApplication<Application>().resources.getString(R.string.invalid_password))
         } else {
-            mListener?.onSuccess("Logging in...")
+            mListener?.onSuccess(getApplication<Application>().resources.getString(R.string.logging_in))
             flag = true
         }
         return flag
