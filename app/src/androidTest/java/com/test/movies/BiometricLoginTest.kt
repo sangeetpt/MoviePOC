@@ -6,7 +6,7 @@ import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.rule.ActivityTestRule
-import com.test.movies.uicomponents.ui.login.biometric.BiometricLogActivity
+import com.test.movies.uicomponents.ui.login.biometric.BiometricLoginActivity
 import org.junit.Assert.assertEquals
 import org.junit.Rule
 import org.junit.Test
@@ -28,8 +28,8 @@ class BiometricLoginTest {
 
     @Rule
     @JvmField
-    var activityTestRule: ActivityTestRule<BiometricLogActivity> =
-        ActivityTestRule(BiometricLogActivity::class.java)
+    var activityTestRule: ActivityTestRule<BiometricLoginActivity> =
+        ActivityTestRule(BiometricLoginActivity::class.java)
 
     /*@Test
     public void checkLogin_backgroundImage() {
